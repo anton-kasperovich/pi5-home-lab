@@ -39,7 +39,7 @@ healthcheck:
 
 # OpenTelemetry instrumentation settings
 otelInstrumentation:
-  enabled: true
+  enabled: false
 
 # Ingress settings
 ingress:
