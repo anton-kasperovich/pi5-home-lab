@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/anton-kasperovich/pi5-home-lab
     targetRevision: main
-    path: .
+    path: apps/actual-budget
   destination:
     server: https://kubernetes.default.svc
     namespace: default
