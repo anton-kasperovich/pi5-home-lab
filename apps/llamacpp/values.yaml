@@ -25,9 +25,10 @@ deployment:
   resources:
     requests:
       memory: "2Gi"
-      cpu: "2000m"
+      cpu: "500m"   # Low request so scheduler can place the pod
     limits:
       memory: "4Gi"
+      cpu: "3500m"  # Leave ~0.5 core for OS/other pods on RPi5 quad-core
 
 # Volume configuration
 volume:
