@@ -17,7 +17,7 @@ deployment:
   name: llama-server
   replicas: 1
   image: ghcr.io/kyroninja/llamacpp-arm64:latest
-  command: "/llama-server"  # Entrypoint binary inside the container
+  command: "/app/llama-server"  # Entrypoint binary inside the container
   modelFile: "/models/ggml-org_gemma-3-1b-it-GGUF_gemma-3-1b-it-Q4_K_M.gguf"
   host: "0.0.0.0"
   port: 8080
