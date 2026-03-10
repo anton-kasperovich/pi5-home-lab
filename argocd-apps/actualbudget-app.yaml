@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/anton-kasperovich/helm-active-budget
+    repoURL: https://github.com/anton-kasperovich/pi5-home-lab
     targetRevision: main
     path: .
   destination:
