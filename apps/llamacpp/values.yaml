@@ -23,10 +23,10 @@ deployment:
   port: 8080
   contextSize: 4096
   parallelSlots: 1
-  cacheTypeK: "q8_0"
-  cacheTypeV: "q8_0"
-  enableJinja: true
-  chatTemplate: "phi3"
+  # cacheTypeK: "q8_0"
+  # cacheTypeV: "q8_0"
+  # enableJinja: false
+  # chatTemplate: "phi3"
   threads: 4
   resources:
     requests:
