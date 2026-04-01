@@ -18,13 +18,16 @@ deployment:
   replicas: 1
   image: ghcr.io/kyroninja/llamacpp-arm64:latest
   command: "/app/llama-server"  # Entrypoint binary inside the container
-  modelFile: "/models/Phi-3.5-mini-instruct.Q5_K_M.gguf"
+  modelFile: "/models/Phi-3.5-mini-instruct-Q4_K_M.gguf"
   host: "0.0.0.0"
   port: 8080
   contextSize: 4096
   parallelSlots: 1
+  cacheTypeK: "q8_0"
+  cacheTypeV: "q8_0"
   enableJinja: true
   chatTemplate: "phi3"
+  threads: 4
   resources:
     requests:
       memory: "3.5Gi"
