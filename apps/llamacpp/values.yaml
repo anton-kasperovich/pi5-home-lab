@@ -17,6 +17,7 @@ deployment:
   name: llama-server
   replicas: 1
   image: llama-bonsai-pi:latest # built local image from fork https://github.com/PrismML-Eng/llama.cpp
+  imagePullPolicy: Never
   command: "/app/llama-server"
   modelFile: "/models/bonsai-8b.gguf"
   host: "0.0.0.0"

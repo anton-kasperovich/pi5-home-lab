@@ -16,6 +16,7 @@ spec:
       containers:
         - name: llama-cpp
           image: {{ .Values.deployment.image }}
+          imagePullPolicy: {{ .Values.deployment.imagePullPolicy | default "IfNotPresent" }}
           command: [{{ .Values.deployment.command | quote }}]
           args:
             - "-m"
