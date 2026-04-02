@@ -16,7 +16,7 @@ service:
 deployment:
   name: llama-server
   replicas: 1
-  image: ghcr.io/kyroninja/llamacpp-arm64:latest
+  image: ghcr.io/ggml-org/llama.cpp:server
   command: "/app/llama-server"  # Entrypoint binary inside the container
   modelFile: "/models/Bonsai-8B.gguf"
   host: "0.0.0.0"
