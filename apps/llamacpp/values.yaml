@@ -16,9 +16,9 @@ service:
 deployment:
   name: llama-server
   replicas: 1
-  image: ghcr.io/ggml-org/llama.cpp:server
-  command: "/app/llama-server"  # Entrypoint binary inside the container
-  modelFile: "/models/ggml-org_gemma-3-1b-it-GGUF_gemma-3-1b-it-Q4_K_M.gguf"
+  image: llama-bonsai-pi:latest # built local image from fork https://github.com/PrismML-Eng/llama.cpp
+  command: "/app/llama-server"
+  modelFile: "/models/bonsai-8b.gguf"
   host: "0.0.0.0"
   port: 8080
   contextSize: 4096
