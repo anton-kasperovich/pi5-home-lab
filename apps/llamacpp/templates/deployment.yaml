@@ -21,6 +21,10 @@ spec:
           args:
             - "-m"
             - {{ .Values.deployment.modelFile | quote }}
+{{- if .Values.deployment.mmprojFile }}
+            - "--mmproj"
+            - {{ .Values.deployment.mmprojFile | quote }}
+{{- end }}
             - "--host"
             - {{ .Values.deployment.host | quote }}
             - "--port"
@@ -46,6 +50,10 @@ spec:
 {{- if .Values.deployment.alias }}
             - "--alias"
             - {{ .Values.deployment.alias | quote }}
+{{- end }}
+{{- if .Values.deployment.chatTemplateKwargs }}
+            - "--chat-template-kwargs"
+            - {{ .Values.deployment.chatTemplateKwargs | quote }}
 {{- end }}
           ports:
             - containerPort: {{ .Values.deployment.port }}

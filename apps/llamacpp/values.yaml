@@ -17,10 +17,11 @@ deployment:
   name: llama-server
   replicas: 1
   image: ghcr.io/ggml-org/llama.cpp:server
-  imagePullPolicy: Never
+  imagePullPolicy: Always
   command: "/app/llama-server"
   alias: "unsloth/gemma-4-26B-A4B-it-qat-GGUF"
   modelFile: "/models/gemma-4-E4B-it-qat-UD-Q4_K_XL.gguf"
+  mmprojFile: "/models/mmproj-BF16.gguf"
   host: "0.0.0.0"
   port: 8080
   contextSize: 4096
@@ -28,6 +29,7 @@ deployment:
   temp: 1.0
   topP: 0.95
   topK: 64
+  chatTemplateKwargs: '{"enable_thinking":true}'
   # cacheTypeK: "q8_0"
   # cacheTypeV: "q8_0"
   # enableJinja: false
