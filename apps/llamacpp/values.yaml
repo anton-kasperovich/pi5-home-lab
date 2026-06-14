@@ -16,14 +16,18 @@ service:
 deployment:
   name: llama-server
   replicas: 1
-  image: llama-bonsai-pi:latest # built local image from fork https://github.com/PrismML-Eng/llama.cpp
+  image: ghcr.io/ggml-org/llama.cpp:server
   imagePullPolicy: Never
   command: "/app/llama-server"
-  modelFile: "/models/Bonsai-4B.gguf"
+  alias: "unsloth/gemma-4-26B-A4B-it-qat-GGUF"
+  modelFile: "/models/gemma-4-E4B-it-qat-UD-Q4_K_XL.gguf"
   host: "0.0.0.0"
   port: 8080
   contextSize: 4096
   parallelSlots: 1
+  temp: 1.0
+  topP: 0.95
+  topK: 64
   # cacheTypeK: "q8_0"
   # cacheTypeV: "q8_0"
   # enableJinja: false

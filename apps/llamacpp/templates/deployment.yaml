@@ -31,6 +31,22 @@ spec:
             - {{ .Values.deployment.parallelSlots | quote }}
             - "-t"
             - {{ .Values.deployment.threads | quote }}
+{{- if hasKey .Values.deployment "temp" }}
+            - "--temp"
+            - {{ .Values.deployment.temp | quote }}
+{{- end }}
+{{- if hasKey .Values.deployment "topP" }}
+            - "--top-p"
+            - {{ .Values.deployment.topP | quote }}
+{{- end }}
+{{- if hasKey .Values.deployment "topK" }}
+            - "--top-k"
+            - {{ .Values.deployment.topK | quote }}
+{{- end }}
+{{- if .Values.deployment.alias }}
+            - "--alias"
+            - {{ .Values.deployment.alias | quote }}
+{{- end }}
           ports:
             - containerPort: {{ .Values.deployment.port }}
           volumeMounts:
