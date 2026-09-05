@@ -22,11 +22,11 @@ persistence:
 # Resource limits (optional for k3s)
 resources:
   limits:
-    cpu: 100m
-    memory: 256Mi
-  requests:
     cpu: 500m
     memory: 1Gi
+  requests:
+    cpu: 100m
+    memory: 256Mi
 
 # Healthcheck settings
 healthcheck:
